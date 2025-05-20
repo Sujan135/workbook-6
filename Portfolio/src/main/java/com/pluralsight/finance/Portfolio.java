@@ -17,4 +17,12 @@ public class Portfolio {
     public void add(Valuable asset) {
         assets.add(asset);
     }
+
+    public double getValue() {
+        double total = 0;
+        for (Valuable asset : assets) {
+            total += asset.getValue();
+        }
+        return total;
+    }
 }
