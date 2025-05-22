@@ -32,7 +32,31 @@ public class Program {
             }
         }
 
-        System.out.println("Matching name: " + searchName );
+        System.out.println("Matching name:");
+        for (Person p : searchName) {
+            System.out.println(p.getFirstName() + " " + p.getLastName());
+        }
+
+        int totalAge = 0;
+        int oldestAge = Integer.MIN_VALUE;
+        int youngestAge = Integer.MAX_VALUE;
+
+        for (Person p : people){
+            int age = p.getAge();
+            totalAge += age;
+            if (age > oldestAge) {
+                oldestAge = age;
+            }
+            if (age < youngestAge) {
+                youngestAge = age;
+            }
+        }
+
+        double averageAge = (double) totalAge / people.size();
+
+        System.out.println("\nAverage age: " + averageAge);
+        System.out.println("Oldest age: " + oldestAge);
+        System.out.println("Youngest age: " + youngestAge);
 
 
     }
